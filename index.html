@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Library — Book Catalog</title>
+  <script>
+    (function(){
+      var s=localStorage.getItem("theme-preference");
+      document.documentElement.setAttribute("data-theme",s==="light"||s==="dark"?s:"");
+    })();
+  </script>
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__brand">
+      <div class="header__logo">
+        <svg class="icon icon--24" aria-hidden="true"><use href="./assets/sprite.svg#icon-book"></use></svg>
+      </div>
+      <div>
+        <h1 class="header__title">The Library</h1>
+        <p class="header__tagline">Discover your next favorite book</p>
+      </div>
+    </div>
+    <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+      <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+        <svg class="icon icon--22" focusable="false"><use href="./assets/sprite.svg#icon-sun"></use></svg>
+      </span>
+      <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+        <svg class="icon icon--22" focusable="false"><use href="./assets/sprite.svg#icon-moon"></use></svg>
+      </span>
+    </button>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h2 class="hero__title">Discover Your Next Great Read</h2>
+      <p class="hero__desc">Search millions of books, build your personal library, and never lose track of what to read next.</p>
+      <form id="search-form" class="search-form">
+        <div class="search-form__wrap">
+          <span class="search-form__icon" aria-hidden="true">
+            <svg class="icon icon--20" focusable="false"><use href="./assets/sprite.svg#icon-search"></use></svg>
+          </span>
+          <input type="text" id="search-input" class="search-input" placeholder="Search for books by title or author..." autocomplete="off">
+        </div>
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </section>
+
+    <section id="search-status" class="search-status" aria-live="polite"></section>
+
+    <div class="content-wrap">
+      <section id="results-section" class="results-section">
+        <h2 class="results-title">Search Results</h2>
+        <div id="results-grid" class="results-grid"></div>
+      </section>
+
+      <aside id="favorites-section" class="favorites-sidebar">
+        <h2 class="favorites-title">
+          <svg class="favorites-title__icon icon icon--20" focusable="false"><use href="./assets/sprite.svg#icon-heart"></use></svg>
+          Favorites
+        </h2>
+        <p id="favorites-count" class="favorites-count">0 books saved</p>
+        <div id="favorites-list" class="favorites-list"></div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">Powered by AntonZippo</footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
