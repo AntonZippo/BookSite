@@ -1,5 +1,7 @@
 # Book Catalog
 
+You can visit deployed version on booksite.fly.dev . Sometimes reqired vpn.
+
 A web app for searching books via the Open Library API and managing favorites (localStorage).
 
 ## Running the app
