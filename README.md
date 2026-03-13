@@ -59,7 +59,3 @@ The app is available at http://localhost:8080
 | `src/utils/` | Utilities (icons) |
 | `assets/` | Static files for dev (publicDir) |
 | `dist/` | Build output (generated) |
-
-## Task
-
-Full task description — see [task.md](task.md).
